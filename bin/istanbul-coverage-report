@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rm -rf ./coverage && NODE_ENV=test XUNIT_FILE=./coverage/xunit.xml $(npm bin)/istanbul cover _mocha --print none --report none -- --reporter=spec-xunit-file && $(npm bin)/istanbul report cobertura && $(npm bin)/istanbul report lcov
