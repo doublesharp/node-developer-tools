@@ -3,6 +3,7 @@
 const path = require('path');
 const Validate = require('git-validate');
 
+// only install these files if we are running as a module
 if (module.filename.endsWith('node_modules/developer-tools/bin/install')) {
 	// copy the base install files if they don't exist
 	Validate.copy('../resources/.depcheckrc', './.depcheckrc');
