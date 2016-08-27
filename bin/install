@@ -3,7 +3,7 @@
 const path = require('path');
 const Validate = require('git-validate');
 
-if (!path.join(__dirname, '..').endsWith('developer-tools')) {
+if (module.filename.endsWith('node_modules/developer-tools/bin/install')) {
 	// copy the base install files if they don't exist
 	Validate.copy('../resources/.depcheckrc', './.depcheckrc');
 	Validate.copy('../resources/.eslintrc', './.eslintrc');
@@ -11,12 +11,12 @@ if (!path.join(__dirname, '..').endsWith('developer-tools')) {
 	Validate.copy('../resources/test/.eslintrc', './test/.eslintrc');
 
 	// update package.json with scripts if they don't exist
-	Validate.installScript('coverage-report', '\"$(npm bin)/istanbul-coverage-report\"');
+	Validate.installScript('coverage-report', '"$(npm bin)/istanbul-coverage-report"');
 	Validate.installScript('coverage', 'npm run coverage-report && open ./coverage/lcov-report/index.html');
-	Validate.installScript('coverage-badge', '\"$(npm bin)/istanbul-cobertura-badger\" -e 95 -g 85 -b \"${PWD##*/}\"');
-	Validate.installScript('lint', '\"$(npm bin)/eslint\" .');
-	Validate.installScript('validate', '\"$(npm bin)/module-validator\"');
-	Validate.installScript('depcheck', '\"$(npm bin)/dependency-checker\"');
+	Validate.installScript('coverage-badge', '"$(npm bin)/istanbul-cobertura-badger" -e 95 -g 85 -b "${PWD##*/}"');
+	Validate.installScript('lint', '"$(npm bin)/eslint" .');
+	Validate.installScript('validate', '"$(npm bin)/module-validator"');
+	Validate.installScript('depcheck', '"$(npm bin)/dependency-checker"');
 
 	// run these hooks from the git pre-commit hook
 	Validate.configureHook('pre-commit', ['lint', 'validate', 'depcheck']);
