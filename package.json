@@ -21,7 +21,7 @@
     "colors": "^1.1.2",
     "depcheck": "^0.6.4",
     "eslint": "^3.4.0",
-    "git-validate": "^2.2.0",
+    "git-validate": "https://github.com/doublesharp/git-validate.git",
     "istanbul": "^0.4.5",
     "istanbul-cobertura-badger": "^1.2.1",
     "mocha": "^3.0.2",
