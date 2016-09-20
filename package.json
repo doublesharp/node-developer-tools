@@ -17,11 +17,11 @@
     "istanbul-coverage-report": "./bin/istanbul-coverage-report"
   },
   "dependencies": {
-    "artillery": "^1.4.1",
+    "artillery": "^1.5.0-16",
     "colors": "^1.1.2",
     "depcheck": "^0.6.4",
-    "eslint": "^3.4.0",
-    "git-validate": "https://github.com/doublesharp/git-validate.git",
+    "eslint": "^3.5.0",
+    "git-validate": "^2.2.2",
     "istanbul": "^0.4.5",
     "istanbul-cobertura-badger": "^1.2.1",
     "mocha": "^3.0.2",
