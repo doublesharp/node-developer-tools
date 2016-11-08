@@ -2,7 +2,7 @@
   "author": "Justin Silver",
   "name": "developer-tools",
   "description": "Developer Tools provides Artillery, ESLint, Git precommit-hooks, Istanbul, and Mocha. NPM scripts for linting, validating modules, validating dependencies, code coverage (json, xunit, cobertura, lcov), and coverage badge.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "homepage": "https://github.com/doublesharp/node-developer-tools",
   "repository": {
@@ -17,15 +17,15 @@
     "istanbul-coverage-report": "./bin/istanbul-coverage-report"
   },
   "dependencies": {
-    "artillery": "^1.5.0-16",
+    "artillery": "^1.5.0-17",
     "colors": "^1.1.2",
     "depcheck": "^0.6.4",
-    "eslint": "^3.6.0",
+    "eslint": "^3.9.1",
     "git-validate": "^2.2.2",
     "istanbul": "^0.4.5",
     "istanbul-cobertura-badger": "^1.2.1",
-    "mocha": "^3.0.2",
-    "nodemon": "^1.10.2",
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0",
     "spec-xunit-file": "0.0.1-3"
   }
 }
