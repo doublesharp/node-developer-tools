@@ -17,7 +17,6 @@
     "istanbul-coverage-report": "./bin/istanbul-coverage-report"
   },
   "dependencies": {
-    "artillery": "^1.5.0-17",
     "colors": "^1.1.2",
     "depcheck": "^0.6.5",
     "eslint": "^3.10.2",
