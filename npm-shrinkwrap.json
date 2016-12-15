@@ -1,6 +1,6 @@
 {
   "name": "developer-tools",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "dependencies": {
     "abbrev": {
       "version": "1.0.9",
