@@ -2,7 +2,7 @@
   "author": "Justin Silver",
   "name": "developer-tools",
   "description": "Developer Tools provides eslint, git precommit-hooks, nyc, and mocha. NPM scripts for linting, validating modules, validating dependencies, code coverage (json, xunit, cobertura, lcov), and coverage badge.",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "license": "MIT",
   "homepage": "https://github.com/doublesharp/node-developer-tools",
   "repository": {
