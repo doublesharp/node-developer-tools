@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
-rm -rf ./coverage \
-  && NODE_ENV=test XUNIT_FILE=./coverage/xunit.xml ./node_modules/.bin/istanbul cover _mocha --print none --report none -- --reporter=spec-xunit-file -s 0 \
-  && ./node_modules/.bin/istanbul report cobertura \
-  && ./node_modules/.bin/istanbul report lcov
+rm -rf ./coverage
+mkdir -p coverage
+
+NODE_ENV=test \
+  XUNIT_FILE=./coverage/xunit.xml \
+  ./node_modules/.bin/nyc \
+  --reporter=lcov \
+  --reporter=cobertura \
+  --reporter=text \
+  ./node_modules/.bin/_mocha \
+  -- \
+  --reporter=spec-xunit-file \
+  -s 0 \
+  --exit

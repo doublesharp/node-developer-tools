@@ -5,25 +5,40 @@ const Validate = require('git-validate');
 
 // only install these files if we are running as a module
 if (module.filename.endsWith('node_modules/developer-tools/bin/install')) {
-	// copy the base install files if they don't exist
-	Validate.copy('../resources/.depcheckrc', './.depcheckrc');
-	Validate.copy('../resources/.eslintrc', './.eslintrc');
-	Validate.copy('../resources/.eslintignore', './.eslintignore');
-	Validate.copy('../resources/test/.eslintrc', './test/.eslintrc');
+  // copy the base install files if they don't exist
+  Validate.copy('../resources/.depcheckrc', './.depcheckrc');
+  Validate.copy('../resources/.eslintrc', './.eslintrc');
+  Validate.copy('../resources/.eslintignore', './.eslintignore');
+  Validate.copy('../resources/test/.eslintrc', './test/.eslintrc');
 
-	// update package.json with scripts if they don't exist
-	Validate.installScript('test', 'NODE_ENV=test ./node_modules/.bin/mocha -s 0');
-	Validate.installScript('inspect', 'NODE_ENV=test ./node_modules/.bin/mocha -s 0 --inspect --debug-brk');
-	Validate.installScript('coverage-report', './node_modules/.bin/istanbul-coverage-report');
-	Validate.installScript('coverage', 'npm run coverage-report && open ./coverage/lcov-report/index.html');
-	Validate.installScript('coverage-badge', './node_modules/.bin/istanbul-cobertura-badger -e 95 -g 85 -b "${PWD##*/}"');
-	Validate.installScript('lint', './node_modules/.bin/eslint .');
-	Validate.installScript('validate', './node_modules/.bin/module-validator');
-	Validate.installScript('depcheck', './node_modules/.bin/dependency-checker');
+  // update package.json with scripts if they don't exist
+  Validate.installScript(
+    'test',
+    'NODE_ENV=test ./node_modules/.bin/mocha -s 0'
+  );
+  Validate.installScript(
+    'inspect',
+    'NODE_ENV=test ./node_modules/.bin/mocha -s 0 --inspect --debug-brk'
+  );
+  Validate.installScript(
+    'coverage-report',
+    './node_modules/.bin/istanbul-coverage-report'
+  );
+  Validate.installScript(
+    'coverage',
+    'npm run coverage-report && open ./coverage/lcov-report/index.html'
+  );
+  Validate.installScript(
+    'coverage-badge',
+    './node_modules/.bin/istanbul-cobertura-badger -e 95 -g 85 -b "${PWD##*/}"'
+  );
+  Validate.installScript('lint', './node_modules/.bin/eslint .');
+  Validate.installScript('validate', './node_modules/.bin/module-validator');
+  Validate.installScript('depcheck', './node_modules/.bin/dependency-checker');
 
-	// run these hooks from the git pre-commit hook
-	Validate.configureHook('pre-commit', ['lint', 'validate', 'depcheck']);
+  // run these hooks from the git pre-commit hook
+  Validate.configureHook('pre-commit', ['lint', 'validate', 'depcheck']);
 
-	// run these hooks from the git pre-commit hook
-	Validate.configureHook('pre-push', []);
+  // run these hooks from the git pre-commit hook
+  Validate.configureHook('pre-push', []);
 }

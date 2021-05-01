@@ -1,7 +1,10 @@
 {
-  installedESLint: true,
-  env: {
-    es6: true,
-    node: true
+  "parserOptions": {
+    "ecmaVersion": 10
+  },
+  "extends": "eslint:recommended",
+  "env": {
+    "es6": true,
+    "node": true
   }
 }
